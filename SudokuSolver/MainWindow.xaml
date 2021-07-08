@@ -1,0 +1,151 @@
+﻿<Window x:Class="SudokuSolver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SudokuSolver"
+        mc:Ignorable="d"
+        FontSize="16"
+        FontFamily="Segoe UI"
+        Title="Sudoku Solver" Height="450" Width="400" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="20" Text="Input:" Margin="0,0,10,10"/>
+        
+        <!-- sudoku grid -->
+        <TextBox x:Name="t11" Grid.Column="2" Grid.Row="2" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t12" Grid.Column="3" Grid.Row="2" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t13" Grid.Column="4" Grid.Row="2" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t14" Grid.Column="5" Grid.Row="2" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t15" Grid.Column="6" Grid.Row="2" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t16" Grid.Column="7" Grid.Row="2" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t17" Grid.Column="8" Grid.Row="2" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t18" Grid.Column="9" Grid.Row="2" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t19" Grid.Column="10" Grid.Row="2" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t21" Grid.Column="2" Grid.Row="3" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t22" Grid.Column="3" Grid.Row="3" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t23" Grid.Column="4" Grid.Row="3" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t24" Grid.Column="5" Grid.Row="3" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t25" Grid.Column="6" Grid.Row="3" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t26" Grid.Column="7" Grid.Row="3" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t27" Grid.Column="8" Grid.Row="3" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t28" Grid.Column="9" Grid.Row="3" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t29" Grid.Column="10" Grid.Row="3" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t31" Grid.Column="2" Grid.Row="4" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t32" Grid.Column="3" Grid.Row="4" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t33" Grid.Column="4" Grid.Row="4" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t34" Grid.Column="5" Grid.Row="4" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t35" Grid.Column="6" Grid.Row="4" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t36" Grid.Column="7" Grid.Row="4" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t37" Grid.Column="8" Grid.Row="4" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t38" Grid.Column="9" Grid.Row="4" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t39" Grid.Column="10" Grid.Row="4" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t41" Grid.Column="2" Grid.Row="5" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t42" Grid.Column="3" Grid.Row="5" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t43" Grid.Column="4" Grid.Row="5" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t44" Grid.Column="5" Grid.Row="5" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t45" Grid.Column="6" Grid.Row="5" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t46" Grid.Column="7" Grid.Row="5" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t47" Grid.Column="8" Grid.Row="5" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t48" Grid.Column="9" Grid.Row="5" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t49" Grid.Column="10" Grid.Row="5" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t51" Grid.Column="2" Grid.Row="6" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t52" Grid.Column="3" Grid.Row="6" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t53" Grid.Column="4" Grid.Row="6" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t54" Grid.Column="5" Grid.Row="6" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t55" Grid.Column="6" Grid.Row="6" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t56" Grid.Column="7" Grid.Row="6" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t57" Grid.Column="8" Grid.Row="6" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t58" Grid.Column="9" Grid.Row="6" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t59" Grid.Column="10" Grid.Row="6" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t61" Grid.Column="2" Grid.Row="7" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t62" Grid.Column="3" Grid.Row="7" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t63" Grid.Column="4" Grid.Row="7" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t64" Grid.Column="5" Grid.Row="7" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t65" Grid.Column="6" Grid.Row="7" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t66" Grid.Column="7" Grid.Row="7" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t67" Grid.Column="8" Grid.Row="7" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t68" Grid.Column="9" Grid.Row="7" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t69" Grid.Column="10" Grid.Row="7" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t71" Grid.Column="2" Grid.Row="8" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t72" Grid.Column="3" Grid.Row="8" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t73" Grid.Column="4" Grid.Row="8" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t74" Grid.Column="5" Grid.Row="8" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t75" Grid.Column="6" Grid.Row="8" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t76" Grid.Column="7" Grid.Row="8" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t77" Grid.Column="8" Grid.Row="8" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t78" Grid.Column="9" Grid.Row="8" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t79" Grid.Column="10" Grid.Row="8" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t81" Grid.Column="2" Grid.Row="9" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t82" Grid.Column="3" Grid.Row="9" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t83" Grid.Column="4" Grid.Row="9" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t84" Grid.Column="5" Grid.Row="9" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t85" Grid.Column="6" Grid.Row="9" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t86" Grid.Column="7" Grid.Row="9" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t87" Grid.Column="8" Grid.Row="9" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t88" Grid.Column="9" Grid.Row="9" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t89" Grid.Column="10" Grid.Row="9" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t91" Grid.Column="2" Grid.Row="10" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t92" Grid.Column="3" Grid.Row="10" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t93" Grid.Column="4" Grid.Row="10" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t94" Grid.Column="5" Grid.Row="10" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t95" Grid.Column="6" Grid.Row="10" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t96" Grid.Column="7" Grid.Row="10" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t97" Grid.Column="8" Grid.Row="10" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t98" Grid.Column="9" Grid.Row="10" Text="" Width="25" MaxLength="1"/>
+        <TextBox x:Name="t99" Grid.Column="10" Grid.Row="10" Text="" Width="25" MaxLength="1"/>
+
+        
+        <!-- controls to show multiple solutions, hidden at start-->
+        <Button x:Name="bkButton" Grid.Column="2" Grid.Row="11" Content="&lt;&lt;"  Margin="00,10" Grid.ColumnSpan="2" Click="BkButton_Click"/>
+        <Button x:Name="fwButton" Grid.Column="9" Grid.Row="11" Content="&gt;&gt;"  Margin="0,10" Grid.ColumnSpan="2" Click="FwButton_Click"/>
+        <Label x:Name="resultsLabel" Grid.Column="4" Grid.Row="11" Content="Result 1/1" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" />
+
+
+        <Button x:Name="solveButton" Grid.Column="1" Grid.Row="12" Content="Solve" Margin="10,25,10,0" Grid.ColumnSpan="4" Click="SolveButton_Click"/>
+        <Button x:Name="clearButton" Grid.Column="5" Grid.Row="12" Content="Clear all" Margin="10,25,10,0" Grid.ColumnSpan="6" Click="ClearButton_Click"/>
+        <Button x:Name="clearOutputButton" Grid.Column="5" Grid.Row="13" Content="Clear result" Margin="10,5" Grid.ColumnSpan="6" Click="ClearOutputButton_Click"/>
+        <Button x:Name="exitButton" Grid.Column="1" Grid.Row="13" Content="Exit" Margin="10,5" Grid.ColumnSpan="4" Click="ExitButton_Click"/>
+
+    </Grid>
+</Window>
