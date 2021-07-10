@@ -16,6 +16,10 @@ namespace SudokuSolver
             solutions = new List<int[,]>();
         }
 
+        /// <summary>
+        /// Input is represented in a 3x3 matrix (int [,]). Cells with value 0 represent empty cells.
+        /// </summary>
+        /// <param name="g"></param>
         public void InputData(int[,] g)
         {
             if (g.GetLength(0) == 9 && g.GetLength(1) == 9)

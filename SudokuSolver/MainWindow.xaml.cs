@@ -32,6 +32,13 @@ namespace SudokuSolver
             bkButton.Visibility = fwButton.Visibility = resultsLabel.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Gets sudoku cell from the window form.
+        /// Index range: x: 1-9, y: 1-9
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         private TextBox GetSudokuCell(int x, int y)
         {
             if (x < 1 || x > 9 || y < 1 || y > 9)
@@ -42,6 +49,13 @@ namespace SudokuSolver
             return this.FindName($"t{x}{y}") as TextBox;
         }
 
+        /// <summary>
+        /// Sets sudoku cell from the window form.
+        /// Index range: x: 1-9, y: 1-9
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="val"></param>
         private void SetSudokuCell(int x, int y, int val)
         {
             if (x < 1 || x > 9 || y < 1 || y > 9)
@@ -151,6 +165,9 @@ namespace SudokuSolver
             }
         }
 
+        /// <summary>
+        /// Clears the full grid and disables the read-only mode.
+        /// </summary>
         private void ClearGrid()
         {
             for (int i = 0; i < 9; i++)
@@ -168,6 +185,10 @@ namespace SudokuSolver
             solveButton.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Clears only the solution part of the grid, leaving the original input.
+        /// Also disables the read-only mode.
+        /// </summary>
         private void ClearGridSolution()
         {
             for (int i = 0; i < 9; i++)
@@ -232,7 +253,7 @@ namespace SudokuSolver
         }
 
         /// <summary>
-        /// Returns the total count of input numbers
+        /// Returns the total count of input numbers ignoring empty cells.
         /// </summary>
         /// <returns></returns>
         private int CountGridNumbers()
