@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         FontSize="20"
         FontFamily="Segoe UI"
-        Title="Sudoku Solver" Height="580" Width="500" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+        Title="Sudoku Solver" Height="580" Width="480" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Background="#FFCD6E38">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40" />

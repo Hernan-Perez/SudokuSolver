@@ -231,7 +231,8 @@ namespace SudokuSolver
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Exit();
+            if (!Exit())
+                e.Cancel = true;
         }
 
         /// <summary>
@@ -288,12 +289,14 @@ namespace SudokuSolver
             return true;
         }
 
-        private void Exit()
+        private bool Exit()
         {
             if (MessageBox.Show(this, "Are you sure you want to exit?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 Environment.Exit(0);
             }
+
+            return false;
         }
 
         private void FwButton_Click(object sender, RoutedEventArgs e)
